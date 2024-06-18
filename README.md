@@ -184,7 +184,7 @@ BOT_TOKEN=2200244087:**   # The token for the Telegram bot
 # Settings for JSON Web Tokens (JWT)
 JWT_ALGORITHM=HS256                # The algorithm used for JWT
 JWT_EXPIRES_IN=1h                  # How long the JWT will remain valid
-JWT_SECRET=secret                  # The secret key for JWT
+JWT_PUBLICKEY=secret                  # The secret key for JWT
 
 # The domain for the backned
 DOMAIN=127.0.0.1 

@@ -23,7 +23,7 @@ services:
       - BOT_TOKEN=${BOT_TOKEN}
       - JWT_ALGORITHM=HS256
       - JWT_EXPIRES_IN=1h
-      - JWT_SECRET=${JWT_SECRET}
+      - JWT_PUBLICKEY=${JWT_PUBLICKEY}
       - DOMAIN=${DOMAIN}
       - NODE_ENV=production
       - BOT_MINIAPP_LINK=${BOT_MINIAPP_LINK}

@@ -182,9 +182,10 @@ GRAPHQL_ENABLE_INTROSPECTION=true
 BOT_TOKEN=2200244087:**   # The token for the Telegram bot
 
 # Settings for JSON Web Tokens (JWT)
-JWT_ALGORITHM=HS256                # The algorithm used for JWT
+JWT_ALGORITHM=RS256                # The algorithm used for JWT
 JWT_EXPIRES_IN=1h                  # How long the JWT will remain valid
 JWT_PUBLICKEY=secret                  # The secret key for JWT
+JWT_PRIVATEKEY=secret
 
 # The domain for the backned
 DOMAIN=127.0.0.1 
@@ -450,12 +451,9 @@ cd miniapp-hub
 2. Create one `.env` file with environment variables for backend and frontend both:
 
 ```bash
-MONGODB_USER=admin
-MONGODB_PASS=******
-MONGODB_DATABASE=minicontent
 BOT_TOKEN=58117:******
 DOMAIN=domain.dev
-JWT_SECRET=secret
+JWT_PUBLICKEY=secret
 BOT_MINIAPP_LINK=https://domain.dev/auth/transactions
 
 NEXT_PUBLIC_GRAPHQL_ENDPOINT=/graphql

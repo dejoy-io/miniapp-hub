@@ -67,7 +67,10 @@ export class AppConfig {
   readonly JWT_EXPIRES_IN: string;
 
   @IsString()
-  readonly JWT_SECRET: string;
+  readonly JWT_PUBLICKEY: string;
+
+  @IsString()
+  readonly JWT_PRIVATEKEY: string;
 
   @IsString()
   readonly BOT_MINIAPP_LINK: string;

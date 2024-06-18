@@ -11,14 +11,14 @@ import { JwtStrategy } from "./strategies/jwt.strategy";
     JwtModule.registerAsync({
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => {
-        const secret = configService.get<AppConfig["JWT_SECRET"]>("JWT_SECRET")!;
+        const privateKey = configService.get<AppConfig["JWT_PRIVATEKEY"]>("JWT_PRIVATEKEY")!;
         const algorithm =
           configService.get<AppConfig["JWT_ALGORITHM"]>("JWT_ALGORITHM")!;
         const expiresIn =
           configService.get<AppConfig["JWT_EXPIRES_IN"]>("JWT_EXPIRES_IN")!;
 
         return {
-          secret: secret,
+          secretOrPrivateKey: privateKey,
           signOptions: {
             algorithm,
             expiresIn,

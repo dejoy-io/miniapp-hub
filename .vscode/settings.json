@@ -1,0 +1,39 @@
+{
+  "eslint.workingDirectories": ["./frontend", "./backend"],
+  "files.exclude": {
+    "**/.git": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "build": true,
+    "**/dist": true,
+    "**/*.log": true,
+    "**/.next": true,
+    "**/.eslintrc.json": true,
+    "**/.gitignore": true,
+    "**/.prettierrc.json": true,
+    "**/.editorconfig": true,
+    "**/.npmrc": true,
+    "**/postcss.config.js": true,
+    "**/tsconfig.json": true,
+    "**/next-env.d.ts": true,
+    "**/.prettierrc":true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

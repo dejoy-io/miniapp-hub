@@ -1,0 +1,29 @@
+image: node:latest
+
+stages:
+  - build
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+before_script:
+  - pnpm install
+
+build:
+  stage: build
+  script:
+    - pnpm run app:build
+  artifacts:
+    paths:
+      - .next
+      - node_modules
+
+deploy:
+  stage: deploy
+  script:
+    - pnpm install -g vercel
+    - vercel --token $VERCEL_TOKEN --prod
+  only:
+    - main

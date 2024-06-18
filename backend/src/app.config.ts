@@ -8,6 +8,8 @@ import {
 } from "class-validator";
 import { Transform, plainToInstance } from "class-transformer";
 import { Algorithm } from "jsonwebtoken";
+import path from "path";
+import fs from 'fs';
 
 export class AppConfig {
   @IsString()
@@ -67,9 +69,11 @@ export class AppConfig {
   readonly JWT_EXPIRES_IN: string;
 
   @IsString()
+  @Transform(({ value }) => fs.readFileSync(path.join(value), 'utf8'))
   readonly JWT_PUBLICKEY: string;
 
   @IsString()
+  @Transform(({ value }) => fs.readFileSync(path.join(value), 'utf8'))
   readonly JWT_PRIVATEKEY: string;
 
   @IsString()

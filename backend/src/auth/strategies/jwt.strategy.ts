@@ -32,9 +32,9 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
   constructor(
     @Inject(ConfigService) private readonly configService: ConfigService,
   ) {
-    const secret = configService.get<AppConfig["JWT_SECRET"]>("JWT_SECRET")!;
+    const publicKey = configService.get<AppConfig["JWT_PUBLICKEY"]>("JWT_PUBLICKEY")!;
     super({
-      secretOrKey: secret,
+      secretOrKey: publicKey,
       jwtFromRequest: ExtractJwt.fromExtractors([
         ExtractJwt.fromAuthHeaderAsBearerToken(),
         buildExtractorFromCookies('miniapp_jwt'),
